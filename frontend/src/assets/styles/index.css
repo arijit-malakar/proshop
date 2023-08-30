@@ -51,6 +51,10 @@ a:hover {
   white-space: nowrap; /* Prevent wrapping */
 }
 
+.product-list-price {
+  font-size: 1.25rem;
+}
+
 table td,
 table th {
   text-align: center;
