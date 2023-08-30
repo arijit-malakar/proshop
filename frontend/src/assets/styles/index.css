@@ -17,6 +17,19 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #1d738d;
+}
+
+.footer {
+  background-color: #000;
+}
+
+.footer-text {
+  color: #fff;
+  margin-bottom: 0px;
+}
+
 .rating span {
   margin: 0.1rem;
 }
