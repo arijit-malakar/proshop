@@ -10,6 +10,12 @@ export const bannerApiSlice = apiSlice.injectEndpoints({
       keepUnusedDataFor: 5,
       providesTags: ["BannerItems"],
     }),
+    getBannerDetails: builder.query({
+      query: (bannerId) => ({
+        url: `${BANNER_URL}/${bannerId}`,
+      }),
+      keepUnusedDataFor: 5,
+    }),
     addBannerItem: builder.mutation({
       query: () => ({
         url: BANNER_URL,
@@ -43,6 +49,7 @@ export const bannerApiSlice = apiSlice.injectEndpoints({
 
 export const {
   useGetBannerItemsQuery,
+  useGetBannerDetailsQuery,
   useAddBannerItemMutation,
   useUpdateBannerItemMutation,
   useUploadBannerImageMutation,

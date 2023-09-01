@@ -9,6 +9,15 @@ const getAllBannerItems = asyncHandler(async (req, res) => {
   res.status(200).json({ bannerItems });
 });
 
+const getBannerItem = asyncHandler(async (req, res) => {
+  const bannerItem = await Banner.findById(req.params.id);
+  if (!bannerItem) {
+    res.status(404);
+    throw new Error("Banner not found!");
+  }
+  res.json(bannerItem);
+});
+
 const addBannerItem = asyncHandler(async (req, res) => {
   const bannerItem = new Banner({
     image: "/images/sample.jpg",
@@ -48,6 +57,10 @@ const deleteBannerItem = asyncHandler(async (req, res) => {
 });
 
 router.route("/").get(getAllBannerItems).post(addBannerItem);
-router.route("/:id").put(updateBannerItem).delete(deleteBannerItem);
+router
+  .route("/:id")
+  .get(getBannerItem)
+  .put(updateBannerItem)
+  .delete(deleteBannerItem);
 
 export default router;
