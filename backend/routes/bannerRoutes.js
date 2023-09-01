@@ -6,7 +6,7 @@ const router = express.Router();
 
 const getAllBannerItems = asyncHandler(async (req, res) => {
   const bannerItems = await Banner.find({});
-  res.status(200).json(bannerItems);
+  res.status(200).json({ bannerItems });
 });
 
 const addBannerItem = asyncHandler(async (req, res) => {
