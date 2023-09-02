@@ -20,15 +20,6 @@ const ProductCarousel = () => {
           </Carousel.Caption>
         </Carousel.Item>
       ))}
-      {/* {Array.from({ length: 3 }, (_, i) => (
-        <Carousel.Item>
-          <Image
-            src={`images/carousel-img-${i + 1}.jpeg`}
-            alt="carousel-img"
-            fluid
-          />
-        </Carousel.Item>
-      ))} */}
     </Carousel>
   );
 };
